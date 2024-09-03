@@ -1,23 +1,30 @@
 ﻿@page
+@using System.Diagnostics;
 @model MyApp.Namespace.ProcessModel
 @{
     // C# Island (his terminolgy)
     // where you can place C# code
+    // CASTING --> ViewData[] as _____ 
     // bad practice for putting business logic in the view
     // use this instead
-    string[]? people = ViewData["People"] as string[];
+    @* string[]? people = ViewData["People"] as string[]; *@
     // nullable is putting ? at the end of var
+
+    Process[]? procs = ViewData["Procs"] as Process[];
  }
 
 <div>
     <h2>Process Page</h2>
-    <h4>@ViewData["Message"]</h4> <!-- AT symbol means print it out. Dictionary thingy.-->
+    @* <h4>@ViewData["Message"]</h4> <!-- AT symbol means print it out. Dictionary thingy.-->
     <ul>
         @foreach (string person in people! /* This determines that it is not nullable */)
         {
             <li>@person</li>
         }
-    </ul>
-
+    </ul> *@
     <!-- bad practice for putting business logic in the view -->
+    @foreach (var proc in procs)
+    {
+        <div>@proc.ProcessName</div>
+    }
 </div>
