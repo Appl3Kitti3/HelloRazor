@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<!-- THIS IS CALLED "TEMPLATE PAGE" -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Process">Process</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -32,7 +36,7 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            @RenderBody() <!-- calls function and renders everything basically. -->
         </main>
     </div>
 
@@ -44,7 +48,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> <!-- customizable -->
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
